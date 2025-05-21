@@ -1,0 +1,4 @@
+v: 3.3
+routeConfig: E:/py code/RunningMan/iOSRealRun-cli-18-main/HNroute.txt
+libimobiledeviceDir: E:/py code/RunningMan/iOSRealRun-cli-18-main/libimobiledevice
+imageDir: E:/py code/RunningMan/iOSRealRun-cli-18-main/DeveloperDiskImage
