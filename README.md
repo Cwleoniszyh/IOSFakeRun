@@ -1,4 +1,5 @@
 # IOSFakeRun
+声明：本项目仅用于学习，不得用于盈利或其他任何非法活动
 
 本项目基于 [iOSRealRun-cli-17](https://github.com/iOSRealRun/iOSRealRun-cli-17) 修改而来，并更新了依赖的 [pymobiledevice3](https://github.com/doronz88/pymobiledevice3)。
 
