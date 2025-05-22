@@ -43,6 +43,9 @@
     ```shell
     python main.py
     ```
+    ```VScode 以管理员权限打开VScode，点击运行main.py即可
+    如果运行报错可以试试文件名改成对应文件的路径
+    ```
     MacOS 打开终端，先进入项目目录，然后执行以下命令  
     ```shell
     sudo python3 main.py
