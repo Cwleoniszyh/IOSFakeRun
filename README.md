@@ -26,7 +26,8 @@
 2. 安装依赖（建议使用虚拟环境）  
     ```shell
     pip3 install -r requirements.txt
-    ```VScode
+    ```
+    ```VScode终端
     pip install -r requirements.txt
     如果 `pip3` 无法安装，请使用 `pip` 替代  
     如果提示没有需要的版本，请尝试不适用国内源  
