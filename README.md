@@ -26,7 +26,8 @@
 2. 安装依赖（建议使用虚拟环境）  
     ```shell
     pip3 install -r requirements.txt
-    ```
+    ```VScode
+    pip install -r requirements.txt
     如果 `pip3` 无法安装，请使用 `pip` 替代  
     如果提示没有需要的版本，请尝试不适用国内源  
 3. 修改配置和路线文件 （见 [这里](https://github.com/iOSRealRun/iOSRealRun-cli/blob/main/README.md#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95) 的 4、5、7 步）
