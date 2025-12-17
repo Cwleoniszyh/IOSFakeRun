@@ -3,16 +3,11 @@ import logging
 import coloredlogs
 import os
 import asyncio
-
-
 from init import init
 from init import tunnel
 from init import route
-
 import run
 import config
-
-
 
 debug = os.environ.get("DEBUG", False)
 
@@ -27,8 +22,6 @@ logging.getLogger('parso.python.diff').setLevel(logging.DEBUG if debug else logg
 logging.getLogger('humanfriendly.prompts').setLevel(logging.DEBUG if debug else logging.WARNING)
 logging.getLogger('blib2to3.pgen2.driver').setLevel(logging.DEBUG if debug else logging.WARNING)
 logging.getLogger('urllib3.connectionpool').setLevel(logging.DEBUG if debug else logging.WARNING)
-
-
 
 async def main():
     logger = logging.getLogger(__name__)
@@ -58,21 +51,26 @@ async def main():
             await run.run(address, port, loc, config.config.v)
         except KeyboardInterrupt:
             logger.debug("get KeyboardInterrupt (inner)")
-            logger.debug(f"Is process alive? {process.is_alive()}")
+            alive = process.is_alive() if process is not None else False
+            logger.debug(f"Is process alive? {alive}")
         finally:
-            logger.debug(f"Is process alive? {process.is_alive()}")
+            alive = process.is_alive() if process is not None else False
+            logger.debug(f"Is process alive? {alive}")
             logger.debug("Start to clear location")
 
     except KeyboardInterrupt:
         logger.debug("get KeyboardInterrupt (outer)")
     finally:
-        logger.debug(f"Is process alive? {process.is_alive()}")
-        logger.debug("terminating tunnel process")
-        process.terminate()
-        logger.info("tunnel process terminated")
+        alive = process.is_alive() if process is not None else False
+        logger.debug(f"Is process alive? {alive}")
+        if process is not None:
+            logger.debug("terminating tunnel process")
+            process.terminate()
+            logger.info("tunnel process terminated")
+        else:
+            logger.debug("no tunnel process to terminate")
         print("Bye")
-    
-
-    
+      
 if __name__ == "__main__":
     asyncio.run(main())
+    
