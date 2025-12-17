@@ -1,9 +1,3 @@
-"""
-run.py
-automatically run the route
-"""
-
-"""修正坐标误差，百度取点使用 BD-09 坐标系，iOS使用 WGS-09 坐标系，进行转换"""
 import math
 import time
 import random
@@ -78,7 +72,7 @@ def randLoc(loc: list, d=0.000025, n=5):
     for i in loc:
         result.append(i.copy())
 
-    center = {"lat": 0, "lng": 0}
+    center = {"lat": 0.0, "lng": 0.0}
     for i in result:
         center["lat"] += i["lat"]
         center["lng"] += i["lng"]
@@ -97,7 +91,7 @@ def randLoc(loc: list, d=0.000025, n=5):
                 continue
             result[j]["lat"] +=  (result[j]["lat"]-center["lat"])/distance*offset*smooth(start, end, j)
             result[j]["lng"] +=  (result[j]["lng"]-center["lng"])/distance*offset*smooth(start, end, j)
-    start = int(i*len(result)/n)
+    start = int((n-1)*len(result)/n)
     end = len(result)
     offset = (2*random.random()-1) * d
     for j in range(start, end):
