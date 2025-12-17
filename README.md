@@ -55,3 +55,11 @@
 7. 按照提示操作，如果一直说没有设备连接，Windows请确保 iTunes 已安装（可能需要打开），重新运行程序，在第3步时请确保设备已连接，解锁并信任
 8. 结束请务必使用 `Ctrl + C` 终止程序，否则无法恢复定位
 9. 如果定位未恢复，可以重启手机解决
+
+
+# 终端运行：
+1. 以管理员身份打开powershell
+2. 输入 cd D:\pyCodes
+3. 激活虚拟环境（.venv）----- 输入.venv\Scripts\Activate.ps1
+4. cd IOSFakeRun-main
+5. 运行程序----- python main.py
